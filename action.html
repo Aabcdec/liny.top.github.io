@@ -1,0 +1,38 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+	<div></div>
+	<div id="s"></div>
+	</body>
+	<script>
+	var div=document.querySelector('div');
+	var s=document.querySelector('#s');
+	setInterval(time,1000);
+	time();
+	function time(){
+		var obj=new Date();
+		var year=obj.getFullYear();//获取当前系统年份
+		var month=obj.getMonth()+1;//获取当前系统月份
+		var date=obj.getDate();//获取当前系统日份
+		var day=obj.getDay();//获取当前学期几0-6
+		var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+		 hours=obj.getHours();//小时
+		var minutes=obj.getMinutes();//分钟
+		var seconds=obj.getSeconds();//秒
+		s.innerHTML= '今天是：'+year+'年'+month+'月'+date+'日 '+arr[day]+'   '+hours+'小时'+minutes+'分钟'+seconds+'秒';
+		//console.log(obj);
+		}
+		
+		//s.innerText=time();
+		if(hours>6&&hours<12){
+		div.innerHTML='上午好！';
+		}else if(hours<18){
+		div.innerHTML='下午好！';
+		}else{
+		div.innerHTML='晚上好！';
+		}
+		
+	</script>
+</html>
